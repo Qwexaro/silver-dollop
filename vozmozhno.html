@@ -1,0 +1,43 @@
+<script>
+let arr = new Array(3);
+let out = "\n";
+for(let i = 0; i < arr.length; i++){
+    arr[i] = new Array(3);
+}
+for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr[i].length; j++){
+        arr[i][j] = Math.floor(Math.random()*41-20);
+        out += arr[i][j] + "\t";
+    }
+    out += "\n\n";
+}
+console.log(out);
+
+let max = arr[0][0];
+let min = arr[0][0];
+let sum = 0;
+let kn = 0;
+
+for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr[i].length; j++){
+        if(arr[i][j] > max){
+            max = arr[i][j];
+        }
+        if(arr[i][j] < min){
+            min = arr[i][j];
+        }
+        sum += arr[i][j];
+        
+        if(arr[i][j] == 0){
+            kn++;
+        }
+    }
+}
+
+console.log("Maximalnoe chislo: ", max);
+console.log("Minimalnoe chislo: ", min);
+console.log("Summa vseh elementov: ", sum);
+console.log("Srednee arifmiticheskoe: ", sum / (arr.length * arr[0].length));
+console.log("Kolichestvo nulei: ", kn);
+
+</script>
